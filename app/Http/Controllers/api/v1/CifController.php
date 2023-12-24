@@ -10,7 +10,16 @@ class CifController extends Controller
 {
     public function index()
     {
-        $cif = Cif::all();
+        // $cif = Cif::all();
+        // return response([
+        //     'success' => true,
+        //     'message' => 'Success',
+        //     'data' => $cif
+        // ], 200);
+
+        $pageSize = 10;
+        $cif = Cif::paginate($pageSize);
+
         return response([
             'success' => true,
             'message' => 'Success',
