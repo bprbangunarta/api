@@ -1,5 +1,6 @@
     <?php
 
+    use App\Http\Controllers\api\v1\CifController;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,5 @@
         return $request->user();
     });
 
-    Route::get('/v1/cif', 'api\v1\CifController@index');
-    Route::get('/v1/cif/{id?}', 'api\v1\CifController@show');
+    Route::get('/v1/cif', [CifController::class, 'index']);
+    Route::get('/v1/cif/{id?}', [CifController::class, 'show']);
