@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Cif extends Model
 {
     use HasFactory;
-    protected $connection = 'sqlsrv';
     protected $table = 'm_cif';
 }
