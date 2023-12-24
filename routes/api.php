@@ -2,6 +2,7 @@
 
     use App\Http\Controllers\api\v1\CifController;
     use App\Http\Controllers\api\v1\DepositoController;
+    use App\Http\Controllers\api\v1\TabunganController;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,8 @@
     Route::get('/v1/cif', [CifController::class, 'index']);
     Route::get('/v1/cif/{id?}', [CifController::class, 'show']);
 
-    Route::get('/v1/deposito/cif/{id?}', [DepositoController::class, 'index']);
+    Route::get('/v1/cif/tabungan/{id?}', [TabunganController::class, 'index']);
+    Route::get('/v1/tabungan/{id?}', [TabunganController::class, 'show']);
+
+    Route::get('/v1/cif/deposito/{id?}', [DepositoController::class, 'index']);
     Route::get('/v1/deposito/{id?}', [DepositoController::class, 'show']);
