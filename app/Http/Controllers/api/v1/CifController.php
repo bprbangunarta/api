@@ -31,7 +31,6 @@ class CifController extends Controller
     {
         $cif = Cif::where('nocif', $id)->first();
 
-
         if ($cif) {
             return response()->json([
                 'success' => true,
@@ -41,7 +40,7 @@ class CifController extends Controller
         } else {
             return response()->json([
                 'success' => false,
-                'message' => 'Filed',
+                'message' => 'Failed',
                 'data'    => ''
             ], 401);
         }
