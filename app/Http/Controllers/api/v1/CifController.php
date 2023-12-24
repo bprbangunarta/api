@@ -10,7 +10,7 @@ class CifController extends Controller
 {
     public function index()
     {
-        $cif = Cif::get();
+        $cif = Cif::all();
         return response([
             'success' => true,
             'message' => 'Success',
