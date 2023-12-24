@@ -10,24 +10,24 @@ class CifController extends Controller
 {
     public function index()
     {
-        $posts = Cif::latest()->get();
+        $cif = Cif::get();
         return response([
             'success' => true,
             'message' => 'Success',
-            'data' => $posts
+            'data' => $cif
         ], 200);
     }
 
     public function show($id)
     {
-        $post = Cif::where('nocif', $id)->first();
+        $cif = Cif::where('nocif', $id)->first();
 
 
-        if ($post) {
+        if ($cif) {
             return response()->json([
                 'success' => true,
                 'message' => 'Success',
-                'data'    => $post
+                'data'    => $cif
             ], 200);
         } else {
             return response()->json([
