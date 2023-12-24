@@ -1,5 +1,6 @@
     <?php
 
+    use App\Http\Controllers\api\v1\AuthController;
     use App\Http\Controllers\api\v1\CifController;
     use App\Http\Controllers\api\v1\DepositoController;
     use App\Http\Controllers\api\v1\TabunganController;
@@ -16,6 +17,11 @@
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+    //API route for register new user
+    Route::post('/register', [AuthController::class, 'register']);
+    //API route for login user
+    Route::post('/login', [AuthController::class, 'login']);
 
     Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
         return $request->user();
