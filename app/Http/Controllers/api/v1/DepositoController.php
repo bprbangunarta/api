@@ -10,7 +10,7 @@ class DepositoController extends Controller
 {
     public function index($id)
     {
-        $cif = Deposito::where('nocif', $id)->first();
+        $cif = Deposito::where('nocif', $id)->get();
 
         if ($cif) {
             return response()->json([
