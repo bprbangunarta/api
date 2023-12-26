@@ -27,13 +27,13 @@
         });
 
         Route::post('/logout', [AuthController::class, 'logout']);
-
-        Route::get('/v1/cif', [CifController::class, 'index']);
-        Route::get('/v1/cif/{id?}', [CifController::class, 'show']);
-
-        Route::get('/v1/cif/tabungan/{id?}', [TabunganController::class, 'index']);
-        Route::get('/v1/tabungan/{id?}', [TabunganController::class, 'show']);
-
-        Route::get('/v1/cif/deposito/{id?}', [DepositoController::class, 'index']);
-        Route::get('/v1/deposito/{id?}', [DepositoController::class, 'show']);
     });
+
+    Route::get('/v1/cif', [CifController::class, 'index']);
+    Route::get('/v1/cif/{id?}', [CifController::class, 'show']);
+
+    Route::get('/v1/cif/tabungan/{id?}', [TabunganController::class, 'index']);
+    Route::get('/v1/tabungan/{id?}', [TabunganController::class, 'show']);
+
+    Route::get('/v1/cif/deposito/{id?}', [DepositoController::class, 'index']);
+    Route::get('/v1/deposito/{id?}', [DepositoController::class, 'show']);
