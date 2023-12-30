@@ -14,8 +14,8 @@ class TransaksiController extends Controller
     public function index($id)
     {
         $now = Carbon::now();
-        $tahun = $now->format('m');
-        $bulan = $now->format('Y');
+        $tahun = $now->format('Y');
+        $bulan = $now->format('m');
         $param = $tahun . $bulan;
 
         $transaksi = Transaksi::where(function ($query) use ($id) {
@@ -40,6 +40,7 @@ class TransaksiController extends Controller
             ], 401);
         }
     }
+
 
     public function by_date($id, $startDate, $endDate)
     {
