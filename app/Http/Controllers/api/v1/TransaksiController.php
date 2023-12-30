@@ -11,14 +11,8 @@ use Illuminate\Support\Facades\DB;
 class TransaksiController extends Controller
 {
 
-    public function index($id, $startDate, $endDate)
+    public function by_date($id, $startDate, $endDate)
     {
-        // $noacc = Tabungan::where('noacc', $id)->first();
-
-        // $id = '0010101201041458';
-        // $startDate = '20231130';
-        // $endDate = '20231231';
-
         $transaksi = Transaksi::where(function ($query) use ($id) {
             $query->where('cracc', $id)
                 ->orWhere('dracc', $id);
