@@ -4,6 +4,7 @@
     use App\Http\Controllers\api\v1\CifController;
     use App\Http\Controllers\api\v1\DepositoController;
     use App\Http\Controllers\api\v1\TabunganController;
+    use App\Http\Controllers\api\v1\TransaksiController;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,5 @@
 
     Route::get('/v1/cif/deposito/{id?}', [DepositoController::class, 'index']);
     Route::get('/v1/deposito/{id?}', [DepositoController::class, 'show']);
+
+    Route::get('/v1/transaksi/{id}/{startDate}/{endDate}', [TransaksiController::class, 'index']);
