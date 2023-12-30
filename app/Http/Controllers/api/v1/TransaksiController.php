@@ -75,7 +75,7 @@ class TransaksiController extends Controller
             ->where('inptgljam', $param)
             ->first();
 
-        if ($transaksi->isNotEmpty()) {
+        if (!is_null($transaksi)) {
             return response()->json([
                 'success' => true,
                 'message' => 'Success',
