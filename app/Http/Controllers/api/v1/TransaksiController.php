@@ -41,7 +41,6 @@ class TransaksiController extends Controller
         }
     }
 
-
     public function by_date($id, $startDate, $endDate)
     {
         $transaksi = Transaksi::where(function ($query) use ($id) {
@@ -51,6 +50,30 @@ class TransaksiController extends Controller
             ->whereBetween('tgltrn', [$startDate, $endDate])
             ->orderBy('inptgljam', 'ASC')
             ->get();
+
+        if ($transaksi->isNotEmpty()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Success',
+                'data'    => $transaksi
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed',
+                'data'    => ''
+            ], 401);
+        }
+    }
+
+    public function show($id, $param)
+    {
+        $transaksi = Transaksi::where(function ($query) use ($id) {
+            $query->where('cracc', $id)
+                ->orWhere('dracc', $id);
+        })
+            ->where('inptgljam', $param)
+            ->first();
 
         if ($transaksi->isNotEmpty()) {
             return response()->json([

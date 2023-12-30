@@ -40,4 +40,5 @@
     Route::get('/v1/deposito/{id?}', [DepositoController::class, 'show']);
 
     Route::get('/v1/transaksi/{id}', [TransaksiController::class, 'index']);
+    Route::get('/v1/transaksi/{id}/{param}', [TransaksiController::class, 'show']);
     Route::get('/v1/transaksi/{id}/{startDate}/{endDate}', [TransaksiController::class, 'by_date']);
