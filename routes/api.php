@@ -33,12 +33,18 @@
     Route::get('/v1/cif', [CifController::class, 'index']);
     Route::get('/v1/cif/{id?}', [CifController::class, 'show']);
 
-    Route::get('/v1/cif/tabungan/{id?}', [TabunganController::class, 'index']);
+    // Route::get('/v1/cif/tabungan/{id?}', [TabunganController::class, 'index']);
+
+    Route::get('/v1/tabungan/simapan/{id?}', [TabunganController::class, 'simapan']);
+    Route::get('/v1/tabungan/siloka/{id?}', [TabunganController::class, 'siloka']);
+    Route::get('/v1/tabungan/simantap/{id?}', [TabunganController::class, 'simantap']);
+    Route::get('/v1/tabungan/simabrur/{id?}', [TabunganController::class, 'simabrur']);
     Route::get('/v1/tabungan/{id?}', [TabunganController::class, 'show']);
+
 
     Route::get('/v1/cif/deposito/{id?}', [DepositoController::class, 'index']);
     Route::get('/v1/deposito/{id?}', [DepositoController::class, 'show']);
 
-    Route::get('/v1/transaksi/{id}', [TransaksiController::class, 'index']);
-    Route::get('/v1/transaksi/{id}/{param}', [TransaksiController::class, 'show']);
-    Route::get('/v1/transaksi/{id}/{startDate}/{endDate}', [TransaksiController::class, 'by_date']);
+    Route::get('/v1/transaksi/{id?}', [TransaksiController::class, 'index']);
+    Route::get('/v1/transaksi/{id?}/{param?}', [TransaksiController::class, 'show']);
+    Route::get('/v1/transaksi/{id?}/{startDate?}/{endDate?}', [TransaksiController::class, 'by_date']);
