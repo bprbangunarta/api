@@ -42,7 +42,7 @@
     Route::get('/v1/tabungan/{id?}', [TabunganController::class, 'show']);
 
 
-    Route::get('/v1/cif/deposito/{id?}', [DepositoController::class, 'index']);
+    Route::get('/v1/tabungan/deposito/{id?}', [DepositoController::class, 'index']);
     Route::get('/v1/deposito/{id?}', [DepositoController::class, 'show']);
 
     Route::get('/v1/transaksi/{id?}', [TransaksiController::class, 'index']);
