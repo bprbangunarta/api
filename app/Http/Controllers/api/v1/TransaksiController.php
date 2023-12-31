@@ -37,7 +37,8 @@ class TransaksiController extends Controller
 
     public function last_month($id)
     {
-        $now = Carbon::now();
+        $timezone = 'Asia/Jakarta';
+        $now = Carbon::now()->setTimezone($timezone);
         $tahun = $now->format('Y');
         $bulan = $now->format('m');
         $param = $tahun . $bulan;
