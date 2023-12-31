@@ -23,6 +23,7 @@ class TransaksiController extends Controller
                 ->orWhere('dracc', $id);
         })
             ->where('thnbln', $param)
+            ->whereNotIn('ststrn', ['9'])
             ->orderBy('inptgljam', 'DESC')
             ->get();
 
@@ -73,7 +74,6 @@ class TransaksiController extends Controller
                 ->orWhere('dracc', $id);
         })
             ->where('inptgljam', $param)
-            ->where('ststrn', 5)
             ->first();
 
         if (!is_null($transaksi)) {
