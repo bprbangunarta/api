@@ -17,7 +17,7 @@ class TransaksiController extends Controller
                 ->orWhere('dracc', $id);
         })
             ->whereNotIn('ststrn', ['9'])
-            ->orderBy('inptgljam', 'ASC')
+            ->orderBy('inptgljam', 'DESC')
             ->get();
 
         if ($transaksi->isNotEmpty()) {
