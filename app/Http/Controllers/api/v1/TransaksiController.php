@@ -23,7 +23,7 @@ class TransaksiController extends Controller
                 ->orWhere('dracc', $id);
         })
             ->where('thnbln', $param)
-            ->orderBy('inptgljam', 'ASC')
+            ->orderBy('inptgljam', 'DESC')
             ->get();
 
         if ($transaksi->isNotEmpty()) {
